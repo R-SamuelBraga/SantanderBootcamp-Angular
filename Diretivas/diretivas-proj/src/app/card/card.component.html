@@ -1,0 +1,32 @@
+<h1>My App</h1>
+<p>Não exibe</p>
+<button>olá mundo</button>
+<ul>
+    <li *ngFor="let produto of produtos; let i = index" (click)="RemoverProduto(i)">{{i}}.{{produto}}</li>
+</ul>
+<input type="text" [(ngModel)]="produto">
+<button (click)="AdicionarProduto()">Adicionar</button>
+
+<div [ngSwitch]="menuType">
+    <div *ngSwitchDefault>
+        <ul><li>editar perfil</li>
+            <li>adcionar cartao</li>
+        </ul>
+        
+    </div>
+    <div *ngSwitchCase="'superuser'">
+        <ul>
+            <li>editar perfil</li>
+            <li>adcionar cartao</li>
+            <li>gerenciar usuarios</li>
+        </ul>
+    </div>
+    <div *ngSwitchCase="'admin'">
+        <ul>
+            <li>editar perfil</li>
+            <li>adcionar cartao</li>
+            <li>gerenciar usuarios</li>
+            <li>gerenciar superusuarios</li>
+        </ul>
+    </div>
+</div>

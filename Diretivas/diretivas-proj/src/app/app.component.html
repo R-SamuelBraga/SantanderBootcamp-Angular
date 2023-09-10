@@ -1,0 +1,10 @@
+<app-atributos>
+  <a href="#">Adicionar ao carrinho</a>
+  <p>eu vim de fora</p>
+</app-atributos>
+<app-card *ngIf="isAliveCard; else anotherBlock"></app-card>
+<button (click)="changeStageAppComponent()">tente</button>
+<ng-template #anotherBlock>
+  <p>Olá sou um bloco secreto</p>
+</ng-template>
+<router-outlet></router-outlet>

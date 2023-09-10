@@ -1,0 +1,15 @@
+<p [ngClass]="estilo">atributos works!</p>
+<button (click)="trocar()">Trocar</button>
+<h1 [ngStyle]="{'background-color':corFundo, 'color':corDafonte}">Curso Angular</h1>
+<h1>Lista de Compras</h1>
+<input type="text" [(ngModel)]="item">
+<button (click)="AdicionarItem()">Adicionar</button>
+<ol type="i" start="20">
+   <li *ngFor="let item of items">{{item}}</li> 
+</ol>
+<ng-template [ngIf]="isEnableBlock">
+    <button>Finalizar Compra</button>
+</ng-template>
+<ng-content select="a"></ng-content>
+<ng-content select="p"></ng-content>
+<hr>
